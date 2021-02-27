@@ -47,6 +47,9 @@ export default {
       }
     },
     groupHighlight (index, selectedGroup) {
+      const group = this.options.find(option => {
+        return option[this.groupLabel] === selectedGroup.$groupLabel
+      })
       if (!this.groupSelect) {
         return [
           'multiselect__option--disabled',
@@ -54,10 +57,6 @@ export default {
           { 'multiselect__option--group-selected': this.wholeGroupSelected(group) }
         ]
       }
-
-      const group = this.options.find(option => {
-        return option[this.groupLabel] === selectedGroup.$groupLabel
-      })
 
       return group && !this.wholeGroupDisabled(group) ? [
         'multiselect__option--group',
