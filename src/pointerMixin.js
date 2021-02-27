@@ -50,7 +50,8 @@ export default {
       if (!this.groupSelect) {
         return [
           'multiselect__option--disabled',
-          { 'multiselect__option--group': selectedGroup.$isLabel }
+          { 'multiselect__option--group': selectedGroup.$isLabel },
+          { 'multiselect__option--group-selected': this.wholeGroupSelected(group) }
         ]
       }
 
