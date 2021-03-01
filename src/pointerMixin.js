@@ -50,11 +50,14 @@ export default {
       const group = this.options.find(option => {
         return option[this.groupLabel] === selectedGroup.$groupLabel
       })
+
+      console.log(group)
+
       if (!this.groupSelect) {
         return [
           'multiselect__option--disabled',
           { 'multiselect__option--group': selectedGroup.$isLabel },
-          { 'multiselect__option--group-selected': group ? this.wholeGroupDisabled(group) : false }
+          { 'multiselect__option--group-selected': group && typeof group !== 'undefined' ? this.wholeGroupDisabled(group) : false }
         ]
       }
 
