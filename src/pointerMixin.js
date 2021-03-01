@@ -54,7 +54,7 @@ export default {
         return [
           'multiselect__option--disabled',
           { 'multiselect__option--group': selectedGroup.$isLabel },
-          { 'multiselect__option--group-selected': this.wholeGroupSelected(group) }
+          { 'multiselect__option--group-selected': group ? this.wholeGroupDisabled(group) : false }
         ]
       }
 
